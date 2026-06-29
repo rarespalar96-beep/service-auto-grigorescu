@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   DESIGN TOKENS — „Premium tehnic"
+   Negru/gri-grafit pentru impact · fundal deschis pentru conținut ·
+   UN accent (roșu) folosit subtil, EXCLUSIV pe CTA și markeri mici.
+   ========================================================================== */
+@theme {
+  /* — Suprafețe închise: negru/grafit neutru (hero / secțiuni de impact) — */
+  --color-antracit: #161618;
+  --color-antracit-800: #1d1d20;
+  --color-antracit-700: #27282c;
+  --color-antracit-600: #3a3b41; /* borduri pe închis */
+
+  /* — Suprafețe deschise (conținut) — */
+  --color-bg: #f4f5f6;
+  --color-surface: #ffffff;
+  --color-line: #e3e5e8; /* borduri pe deschis */
+
+  /* — Text — */
+  --color-ink: #14161a; /* text principal pe deschis */
+  --color-muted: #59616b; /* text secundar pe deschis */
+  --color-ink-invert: #f6f7f8; /* text principal pe închis */
+  --color-muted-invert: #99a1ab; /* text secundar pe închis */
+
+  /* — Accent: roșu. Subtil, DOAR pe CTA și markeri (nu inundă interfața).
+     Suficient de închis pentru contrast AA atât pe alb cât și pe negru. — */
+  --color-accent: #d11a2a;
+  --color-accent-600: #b3121f; /* hover (mai închis) */
+  --color-accent-ink: #ffffff; /* text pe accent (roșul e închis) */
+  /* Roșu mai deschis DOAR pentru text mic pe fundal ÎNCHIS (eyebrow-uri, linkuri).
+     Trece contrast AA (≥4.5:1) pe negru #161618 și grafit #1d1d20, unde accentul
+     normal (#d11a2a) cade la ~3.3:1. NU se folosește ca fundal. */
+  --color-accent-light: #ec4a57;
+
+  /* — Fonturi (variabilele vin din next/font în layout.tsx) — */
+  --font-display: var(--font-saira), "Arial Narrow", system-ui, sans-serif;
+  --font-body: var(--font-barlow), system-ui, sans-serif;
+
+  /* — Rază — */
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+}
+
+/* ============================================================================
+   BAZĂ
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* compensează header-ul sticky la navigarea pe ancore (#servicii, #contact…) */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  /* Focus vizibil pe tastatură (cerință A11y). */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ============================================================================
+   ELEMENT-SEMNĂTURĂ — „riglă de diagnoză" (gauge cu tick-marks)
+   Folosit ca separator de secțiuni și accent în hero.
+   `--rule-color` setează culoarea liniei.
+   ========================================================================== */
+@utility gauge-rule {
+  height: 10px;
+  --rule-color: var(--color-antracit-600);
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent calc(100% - 1px),
+      var(--rule-color) calc(100% - 1px)
+    ),
+    repeating-linear-gradient(
+      to right,
+      var(--rule-color) 0 1px,
+      transparent 1px 12px
+    );
+  background-repeat: no-repeat, repeat-x;
+  background-position: bottom, bottom;
+  background-size: 100% 100%, 100% 6px;
+}
+
+/* Variantă accent a riglei (pentru hero / momente cheie). */
+@utility gauge-rule-accent {
+  --rule-color: var(--color-accent);
+}
+
+/* ============================================================================
+   SCALĂ DE ELEVAȚIE — umbre subtile, multi-strat, calibrate pe paleta neutră.
+   Înlocuiesc shadow-sm/lg generice pe carduri pentru un finish mai premium.
+   ========================================================================== */
+@utility shadow-card {
+  box-shadow:
+    0 1px 2px rgba(20, 22, 26, 0.04),
+    0 2px 8px rgba(20, 22, 26, 0.05);
+}
+
+@utility shadow-card-hover {
+  box-shadow:
+    0 2px 4px rgba(20, 22, 26, 0.05),
+    0 16px 36px -8px rgba(20, 22, 26, 0.16);
+}
+
+/* Glow accent subtil — folosit ca lumină de fundal în hero (NU inundă). */
+@utility accent-glow {
+  background: radial-gradient(
+    58% 48% at 12% 0%,
+    rgba(209, 26, 42, 0.2),
+    transparent 70%
+  );
+}
+
+/* Fundal „blueprint" subtil pentru suprafețe antracit. */
+@utility bg-blueprint {
+  background-color: var(--color-antracit);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ============================================================================
+   MICRO-INTERACȚIUNI — intrare reținută (transform + opacity).
+   NU se aplică pe titlul hero (element LCP), ca să nu întârzie LCP.
+   ========================================================================== */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility reveal {
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ============================================================================
+   MOTION — respectă prefers-reduced-motion (cerință A11y)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================================
+   CARUSEL RECENZII — auto-scroll continuu (marquee), buclă fără cusături.
+   Lista e dublată în JSX → translateX(-50%) parcurge exact o serie.
+   ========================================================================== */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reviews-marquee {
+  overflow: hidden;
+}
+
+.reviews-marquee-track {
+  animation: marquee 45s linear infinite;
+  will-change: transform;
+}
+
+/* Pauză la hover sau focus din tastatură */
+.reviews-marquee:hover .reviews-marquee-track,
+.reviews-marquee:focus-within .reviews-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Reduced motion: fără rulare automată; permite scroll manual cu snap */
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .reviews-marquee-track {
+    animation: none;
+  }
+  .reviews-marquee-track > * {
+    scroll-snap-align: start;
+  }
+}
