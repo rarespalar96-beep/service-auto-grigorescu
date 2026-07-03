@@ -1,21 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { site, adresaCompleta, adresaTbd } from "@/content/site";
+import { site } from "@/content/site";
 import { mapEmbedUrl, directionsUrl, externalLinkAttrs } from "@/lib/links";
 import { trackEvent } from "@/lib/analytics";
 import Placeholder from "@/components/ui/Placeholder";
 
 /**
- * Hartă Google Maps lazy-loaded: până nu apeși, NU se încarcă iframe-ul Google
- * (zero cost de performanță / fără cookies Google la load). La click se montează
- * embed-ul (gratuit, fără API key) și se trimite un eveniment de analytics.
- *
- * Harta funcționează din adresa completă (fără coordonate / API key). Placeholder
- * doar dacă lipsește și adresa.
+ * Hartă Google Maps. Iframe-ul se randează direct (preîncărcat), cu `loading="lazy"`
+ * ca să nu se descarce decât când ajunge aproape de viewport — fără buton de „încarcă"
+ * și fără API key. Placeholder doar dacă lipsește adresa (fără adresă nu există URL).
  */
 export default function LazyMap({ className = "" }: { className?: string }) {
-  const [loaded, setLoaded] = useState(false);
   const embed = mapEmbedUrl();
   const indicatii = directionsUrl();
 
@@ -40,37 +35,16 @@ export default function LazyMap({ className = "" }: { className?: string }) {
 
   return (
     <div className={container}>
-      {loaded && embed ? (
-        <iframe
-          src={embed}
-          title={`Hartă — ${site.nume}`}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-          className="absolute inset-0 h-full w-full"
-        />
-      ) : (
-        <button
-          type="button"
-          onClick={() => {
-            setLoaded(true);
-            trackEvent("load_harta");
-          }}
-          className="group absolute inset-0 grid w-full place-items-center text-center focus-visible:outline-none"
-        >
-          <span className="text-muted-invert">
-            <PinIcon />
-            <span className="mt-3 block font-display text-sm font-semibold uppercase tracking-wide text-ink-invert">
-              {adresaTbd() ? <Placeholder label="Adresă" /> : adresaCompleta()}
-            </span>
-            <span className="mt-3 inline-flex items-center gap-2 rounded-md border border-antracit-600 px-4 py-2 font-display text-sm font-semibold uppercase tracking-wide text-ink-invert transition-colors group-hover:border-accent group-hover:text-accent">
-              Încarcă harta
-            </span>
-          </span>
-        </button>
-      )}
+      <iframe
+        src={embed}
+        title={`Hartă — ${site.nume}`}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+        className="absolute inset-0 h-full w-full"
+      />
 
-      {/* „Vezi indicații" — funcționează indiferent dacă harta e încărcată */}
+      {/* „Vezi indicații" */}
       {indicatii && (
         <a
           href={indicatii}
