@@ -3,6 +3,9 @@ import { site } from "@/content/site";
 import { servicii } from "@/content/servicii";
 import { articole } from "@/content/blog";
 
+// Necesar cu `output: export` — generat static la build.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
   const now = new Date();

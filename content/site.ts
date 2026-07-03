@@ -22,7 +22,7 @@ export const site = {
   slogan: "Service auto autorizat RAR",
 
   /** URL-ul canonic al site-ului (fără slash final). Config pt. metadata/sitemap. TODO. */
-  url: "https://www.serviceautogrigorescu.ro", // TODO (nevizibil; necesar absolut pt. metadataBase)
+  url: "https://servicegrigorescu.ro", // domeniu real (.ro, apex) — canonic pt. metadataBase/sitemap/OG
 
   /** Interval de preț pentru JSON-LD (Schema.org). */
   priceRange: "$$",
