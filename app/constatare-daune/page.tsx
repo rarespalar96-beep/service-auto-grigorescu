@@ -206,6 +206,14 @@ function DauneIconSvg({ name }: { name: DauneIcon }) {
       </>
     ),
     handshake: <path d="M3 12l4-4 5 4 2-2 4 3 3-2M7 8l3 3M12 14l2 2M9 16l2 2" />,
+    car: (
+      <>
+        <path d="M4 13l1.8-5A2 2 0 0 1 7.7 6.5h8.6a2 2 0 0 1 1.9 1.5L20 13" />
+        <path d="M2.5 13h19v3.5a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V13z" />
+        <circle cx="7.5" cy="17.5" r="1.6" />
+        <circle cx="16.5" cy="17.5" r="1.6" />
+      </>
+    ),
   };
   return (
     <svg

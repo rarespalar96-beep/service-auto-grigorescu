@@ -4,6 +4,7 @@ import { faqLd } from "@/lib/jsonld";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import ServicesGrid from "@/components/sections/ServicesGrid";
+import DauneBanner from "@/components/sections/DauneBanner";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Reviews from "@/components/sections/Reviews";
 import Gallery from "@/components/sections/Gallery";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <ServicesGrid />
+      <DauneBanner />
       <HowItWorks />
       <Reviews />
       <Gallery />

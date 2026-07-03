@@ -16,7 +16,7 @@ export interface PasConstatare {
 }
 
 /** Cheile iconițelor proprii acestei pagini (vezi `app/constatare-daune/page.tsx`). */
-export type DauneIcon = "shield" | "clipboard" | "wallet" | "handshake";
+export type DauneIcon = "shield" | "clipboard" | "wallet" | "handshake" | "car";
 
 export interface TipAcoperire {
   nume: string;
@@ -104,6 +104,13 @@ export const constatareDaune = {
         "Cu asigurătorii parteneri facturăm direct către ei — tu nu mai avansezi " +
         "banii pentru reparație.",
       icon: "wallet",
+    },
+    {
+      nume: "Mașină la schimb",
+      descriere:
+        "Ca să nu rămâi pe jos, îți punem la dispoziție o mașină la schimb pe toată " +
+        "durata reparației.",
+      icon: "car",
     },
   ] as TipAcoperire[],
 
