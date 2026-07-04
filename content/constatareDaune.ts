@@ -130,12 +130,6 @@ export const constatareDaune = {
   /** Întrebări frecvente — șablon editabil. */
   faq: [
     {
-      intrebare: "Cât costă constatarea daunei?",
-      raspuns:
-        "Constatarea și întocmirea dosarului de daună nu te costă nimic — reparația " +
-        "se acoperă din polița de asigurare, conform devizului aprobat.",
-    },
-    {
       intrebare: "Trebuie să plătesc eu reparația și apoi recuperez banii?",
       raspuns:
         "Cu asigurătorii cu care avem decontare directă, nu. Facturăm direct către " +

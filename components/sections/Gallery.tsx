@@ -7,26 +7,32 @@ import SectionHeading from "@/components/ui/SectionHeading";
  */
 const poze = [
   {
-    src: "/galerie/service-1.jpg",
-    alt: "Fațada Service Auto Grigorescu pe Bulevardul Nicolae Grigorescu, cu boxele de mecanică, tinichigerie, vopsitorie și stația ITP",
+    src: "/galerie/exterior.jpg",
+    alt: "Fațada Service Auto Grigorescu pe Bulevardul Nicolae Grigorescu 46–48, cu boxele de mecanică, tinichigerie, vopsitorie, service roți și stația ITP",
     span: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "/galerie/service-4.jpg",
-    alt: "Intrarea la stația ITP autorizată RAR, pe lateralul clădirii dinspre strada Prevederii",
+    src: "/galerie/itp-interior.jpg",
+    alt: "Stația ITP autorizată RAR și standul de geometrie 3D — mașină pe rampă în timpul verificării",
   },
   {
-    src: "/galerie/service-2.jpg",
-    alt: "Service Auto Grigorescu — boxe deschise cu mașini pe elevator",
+    src: "/galerie/itp-intrare.jpg",
+    alt: "Intrarea la stația ITP autorizată RAR, pe lateralul clădirii",
   },
   {
-    src: "/galerie/service-3.jpg",
-    alt: "Halele service-ului: mecanică, geometrie 3D, service roți și spălătorie auto",
+    src: "/galerie/panoramic.jpg",
+    alt: "Service Auto Grigorescu — vedere de ansamblu din intersecție: stația ITP, mecanică, spălătorie și service roți",
     span: "md:col-span-2",
   },
   {
-    src: "/galerie/service-5.jpg",
-    alt: "Service Auto Grigorescu — vedere din stradă, stație ITP și spălătorie auto",
+    src: "/galerie/atelier.jpg",
+    alt: "Atelierul nostru: elevatoare cu două coloane, depozit de anvelope și echipamente de încărcare climatizare",
+    span: "md:col-span-2",
+  },
+  {
+    src: "/galerie/vulcanizare.jpg",
+    alt: "Service roți și vulcanizare — stoc de anvelope și boxele de montaj, echilibrare și geometrie",
+    span: "md:col-span-2",
   },
 ];
 

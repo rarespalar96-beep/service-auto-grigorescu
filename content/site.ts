@@ -14,6 +14,11 @@ export interface ProgramZi {
   ore: string; // "08:00–18:00" sau "Închis" — TBD cât timp nu e completat
 }
 
+export interface ProgramDepartament {
+  departament: string;
+  ore: string; // orele valabile Luni–Vineri
+}
+
 export const site = {
   /** Numele afișat al service-ului — IDENTIC cu Google Business Profile (SEO local). */
   nume: "Service Auto Grigorescu",
@@ -55,7 +60,10 @@ export const site = {
     lng: null as number | null, // TODO
   },
 
-  /** Program de lucru — footer, contact și JSON-LD. */
+  /**
+   * Program de lucru sintetic (anvelopa cea mai largă) — folosit în footer și în
+   * JSON-LD `openingHoursSpecification`. Detaliul pe departamente e mai jos.
+   */
   program: [
     { zi: "Luni", ore: "08:00–20:00" },
     { zi: "Marți", ore: "08:00–20:00" },
@@ -65,6 +73,23 @@ export const site = {
     { zi: "Sâmbătă", ore: "08:00–17:00" },
     { zi: "Duminică", ore: "Închis" },
   ] as ProgramZi[],
+
+  /**
+   * Program pe departamente — valabil Luni–Vineri. Sâmbătă toate departamentele
+   * au program general (vezi `programWeekend`), Duminică închis.
+   */
+  programDepartamente: [
+    { departament: "ITP", ore: "11:00–20:00" },
+    { departament: "Mecanică", ore: "08:00–18:00" },
+    { departament: "Spălătorie & Vulcanizare", ore: "08:00–20:00" },
+    { departament: "Constatare daune", ore: "08:00–20:00" },
+  ] as ProgramDepartament[],
+
+  /** Program de weekend — se aplică tuturor departamentelor. */
+  programWeekend: {
+    sambata: "08:00–17:00",
+    duminica: "Închis",
+  },
 
   /**
    * Platforma externă de programări. Rădăcina gatadedrum.com e reală; URL-ul EXACT

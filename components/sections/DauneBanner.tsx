@@ -16,7 +16,7 @@ export default function DauneBanner() {
             <span className="grid h-9 w-9 place-items-center rounded-md bg-accent/[0.12] text-accent-light ring-1 ring-accent/20">
               <ShieldIcon />
             </span>
-            Daune auto RCA &amp; CASCO
+            Daune auto RCA
           </p>
 
           <h2 className="mt-4 text-3xl font-bold uppercase sm:text-4xl">

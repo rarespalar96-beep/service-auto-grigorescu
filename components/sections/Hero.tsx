@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site, aniExperienta } from "@/content/site";
 import { isTbd } from "@/content/_placeholder";
 import { recenzii } from "@/content/recenzii";
@@ -14,6 +15,21 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-blueprint text-ink-invert">
+      {/* Fotografia reală a service-ului — blurată, ca fundal atmosferic */}
+      <Image
+        src="/hero/service-fundal.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        aria-hidden
+        className="pointer-events-none scale-110 object-cover opacity-40 blur-[6px]"
+      />
+      {/* Voal întunecat — garantează contrast AA pe textul alb */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-antracit via-antracit/90 to-antracit/60"
+      />
       {/* Lumină de fundal accent (decorativă, subtilă) */}
       <div className="accent-glow pointer-events-none absolute inset-0" aria-hidden />
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.15fr_0.85fr]">

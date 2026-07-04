@@ -7,6 +7,7 @@ import PhoneLink from "@/components/cta/PhoneLink";
 import BookingButton from "@/components/cta/BookingButton";
 import LazyMap from "@/components/integrations/LazyMap";
 import Placeholder from "@/components/ui/Placeholder";
+import ProgramDepartamente from "@/components/sections/ProgramDepartamente";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -70,18 +71,9 @@ export default function ContactPage() {
               </Bloc>
 
               <Bloc termen="Program">
-                <ul className="space-y-1">
-                  {site.program.map((z) => (
-                    <li key={z.zi} className="flex items-center justify-between gap-6 text-ink">
-                      <span className="text-muted">{z.zi}</span>
-                      {isTbd(z.ore) ? (
-                        <Placeholder label="ore" />
-                      ) : (
-                        <span className={z.ore === "Închis" ? "text-muted" : ""}>{z.ore}</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-ink">
+                  <ProgramDepartamente tone="light" />
+                </div>
               </Bloc>
             </dl>
 

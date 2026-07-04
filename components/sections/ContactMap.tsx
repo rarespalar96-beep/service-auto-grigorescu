@@ -5,6 +5,7 @@ import PhoneLink from "@/components/cta/PhoneLink";
 import BookingButton from "@/components/cta/BookingButton";
 import LazyMap from "@/components/integrations/LazyMap";
 import Placeholder from "@/components/ui/Placeholder";
+import ProgramDepartamente from "@/components/sections/ProgramDepartamente";
 
 /**
  * Contact + program + hartă.
@@ -63,18 +64,7 @@ export default function ContactMap() {
             </Rand>
 
             <Rand termen="Program">
-              <ul className="space-y-1">
-                {site.program.map((z) => (
-                  <li key={z.zi} className="flex items-center justify-between gap-6">
-                    <span className="text-muted-invert">{z.zi}</span>
-                    {isTbd(z.ore) ? (
-                      <Placeholder label="ore" />
-                    ) : (
-                      <span className={z.ore === "Închis" ? "text-muted-invert" : ""}>{z.ore}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
+              <ProgramDepartamente tone="dark" />
             </Rand>
           </dl>
 

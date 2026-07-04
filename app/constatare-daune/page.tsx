@@ -36,7 +36,7 @@ export default function ConstatareDaunePage() {
 
       <PageHeader
         titlu="Constatare daune"
-        subtitlu="Dosar de daună RCA, constatare cu asigurătorul și reparație prin asigurare — preluăm noi partea complicată."
+        subtitlu="Dosar de daună RCA, constatare cu asigurătorul și reparație prin asigurare. Îți dăm mașină la schimb pe toată durata reparației — tu nu rămâi pe jos."
       />
 
       {/* Intro + card contact (sticky pe desktop) */}
@@ -105,8 +105,8 @@ export default function ConstatareDaunePage() {
             <div className="mt-6 flex items-start gap-3 rounded-xl border border-line bg-surface p-5 shadow-card">
               <CheckIcon />
               <p className="text-ink">
-                Lucrăm cu toate companiile de asigurări. Indiferent de unde ai RCA-ul sau
-                CASCO, te ajutăm cu dosarul de daună — de la constatare până la reparație.
+                Lucrăm cu toate companiile de asigurări. Indiferent de unde ai RCA-ul, te
+                ajutăm cu dosarul de daună — de la constatare până la reparație.
               </p>
             </div>
 
@@ -172,8 +172,7 @@ export default function ConstatareDaunePage() {
               </dl>
 
               <p className="mt-4 text-xs text-muted">
-                Constatarea și întocmirea dosarului nu te costă nimic — reparația se
-                acoperă din asigurare, conform devizului aprobat.
+                Reparația se acoperă din polița de asigurare, conform devizului aprobat.
               </p>
             </div>
           </aside>
