@@ -6,7 +6,7 @@
  * respective au valoarea `TBD` (text) sau `null` (numeric), iar UI-ul afișează un
  * chip vizibil „DE COMPLETAT" în loc de date fictive.
  *
- * Vezi `components/ui/Placeholder.tsx` (chip-ul vizual) și `TODO-continut.md`.
+ * Vezi `components/ui/Placeholder.tsx` (chip-ul vizual).
  */
 
 /** Sentinel pentru un câmp text de completat de proprietar. */

@@ -46,3 +46,8 @@ next-env.d.ts
 # working artifacts (screenshots, scratch)
 /.playwright-mcp/
 /reviews-carousel.png
+
+# planning intern — mutat in "D:\planning Service"
+/.planning/
+/PLAN-site-service-auto.md
+/TODO-continut.md

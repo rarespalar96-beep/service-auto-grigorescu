@@ -3,7 +3,7 @@
  *
  * MOD DEMO: datele individuale (telefon, adresă, rating etc.) sunt
  * marcate `TBD` (text) sau `null` (numeric) și apar în site ca un chip vizibil
- * „DE COMPLETAT". Proprietarul le furnizează — vezi `TODO-continut.md`.
+ * „DE COMPLETAT". Proprietarul le furnizează.
  * Înlocuiește valorile, NU schimba structura. Helper-e în `content/_placeholder.ts`.
  */
 

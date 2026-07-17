@@ -8,7 +8,7 @@ import { getConsent, onConsentChange } from "@/lib/consent";
  * Încarcă providerul de analytics după variabilele de mediu:
  *   - NEXT_PUBLIC_GA_ID            (G-XXXXXXX)  → GA4 (cookies → necesită consimțământ)
  *   - NEXT_PUBLIC_PLAUSIBLE_DOMAIN (domeniu)    → Plausible (cookieless, fără consimțământ)
- * Fără env → no-op. Vezi `.env.example` și TODO-continut.md.
+ * Fără env → no-op. Vezi `.env.example`.
  */
 export default function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;

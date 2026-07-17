@@ -6,7 +6,7 @@
  * MOD DEMO: descrierile/pașii/FAQ sunt șablon editabil (NU date individuale) și
  * pot rămâne ca atare. Datele care țin EXCLUSIV de service — lista asigurătorilor
  * cu decontare directă — sunt GOLITE și apar ca un chip „DE COMPLETAT" în UI.
- * Înlocuiește valorile, NU schimba structura. Vezi `TODO-continut.md`.
+ * Înlocuiește valorile, NU schimba structura.
  */
 
 export interface PasConstatare {
