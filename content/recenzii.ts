@@ -1,12 +1,15 @@
 /**
  * Recenzii — VARIANTA A (v1): curate manual, copiate de proprietar din Google.
  *
- * Decizie (2026-06-22): afișăm DOAR aceste testimoniale reale (toate 5 stele),
- * FĂRĂ nota agregată — media reală a profilului e 3,5 din 55 recenzii, deci nu
- * afișăm rating agregat (ar fi fie nemăgulitor, fie fals). `site.google.rating`
- * și `numarRecenzii` rămân `null`, `ratingReal` rămâne `false` (fără
- * aggregateRating în JSON-LD). Componenta `sections/Reviews` consumă aceeași
- * structură ca varianta B (Google Places API), deci trecerea A→B nu schimbă UI-ul.
+ * Decizie inițială (2026-06-22): fără notă agregată — media era 3,5 din 55.
+ * REVIZUIT (2026-07-27): media a urcat la 4,0 din 80 de recenzii, deci afișăm
+ * agregatul pe site și în JSON-LD (`site.google.ratingReal: true`).
+ *
+ * Testimonialele de mai jos rămân alese MANUAL, chiar dacă cifrele agregate ar
+ * ajunge cândva să vină din Places API (varianta B): API-ul întoarce maximum 5
+ * recenzii și nu poți alege care, deci selecția manuală protejează homepage-ul.
+ * Componenta `sections/Reviews` consumă aceeași structură ca varianta B, deci
+ * trecerea A→B nu schimbă UI-ul.
  *
  * Texte curățate ușor (typos/diacritice) și scurtate, păstrând sensul și tonul.
  */

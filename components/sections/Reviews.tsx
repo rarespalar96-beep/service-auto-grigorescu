@@ -3,26 +3,40 @@ import { externalLinkAttrs } from "@/lib/links";
 import { getReviews, type ReviewsData } from "@/lib/reviews";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Placeholder from "@/components/ui/Placeholder";
+import Stars from "@/components/ui/Stars";
 import ReviewsCarousel from "@/components/sections/ReviewsCarousel";
 
 /**
  * Secțiune recenzii. Sursa datelor vine din `lib/reviews` (varianta A acum,
  * varianta B/Google Places în v2) — acest UI nu se schimbă la comutare.
  *
- * Afișăm DOAR testimoniale reale, într-un carusel auto-scroll (vezi
- * `ReviewsCarousel`), FĂRĂ notă agregată — decizie 2026-06-22 (vezi `recenzii.ts`).
+ * Nota agregată se afișează doar când există cifre reale (vezi `recenzii.ts`);
+ * testimonialele din carusel rămân cele alese manual.
  */
 interface Props {
   data?: ReviewsData;
 }
 
 export default async function Reviews({ data }: Props) {
-  const { recenzii } = data ?? (await getReviews());
+  const { recenzii, rating, total } = data ?? (await getReviews());
+  const areAgregat = rating !== null && total !== null;
 
   return (
     <section id="recenzii" className="bg-bg">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
         <SectionHeading eyebrow="Ce spun clienții" title="Recenzii reale, de pe Google" />
+
+        {areAgregat ? (
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <Stars rating={rating} size={20} />
+            <span className="font-display text-2xl font-semibold text-ink">
+              {rating.toFixed(1).replace(".", ",")}
+            </span>
+            <span className="text-sm text-muted">
+              din {total} de recenzii pe Google
+            </span>
+          </div>
+        ) : null}
 
         <ReviewsCarousel recenzii={recenzii} />
 

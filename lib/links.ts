@@ -19,18 +19,11 @@ export function telHref(): string | null {
   return `tel:${site.contact.telefonTel}`;
 }
 
-/** True dacă există coordonate GPS reale. */
-export function areCoordonate(): boolean {
-  return site.contact.lat !== null && site.contact.lng !== null;
-}
-
 /**
- * Ținta pentru Google Maps: coordonatele dacă există, altfel adresa completă.
- * `null` doar dacă lipsește și adresa. Adresa e suficientă pentru punct pe hartă +
- * indicații, fără coordonate / Place ID / API key.
+ * Ținta pentru Google Maps: adresa completă. `null` doar dacă lipsește adresa.
+ * Adresa e suficientă pentru punct pe hartă + indicații, fără Place ID / API key.
  */
 function mapsDestination(): string | null {
-  if (areCoordonate()) return `${site.contact.lat},${site.contact.lng}`;
   const c = site.contact;
   if (isTbd(c.adresa)) return null;
   return [c.adresa, c.codPostal, c.oras, c.tara].filter(Boolean).join(", ");
@@ -51,7 +44,7 @@ export function directionsUrl(): string | null {
 
 /**
  * URL pentru embed-ul Google Maps (iframe), GRATUIT și fără API key.
- * Folosește adresa completă când nu avem coordonate. Folosit lazy — vezi `LazyMap`.
+ * Folosit lazy — vezi `LazyMap`.
  */
 export function mapEmbedUrl(): string | null {
   const q = mapsDestination();

@@ -6,7 +6,7 @@
  * Lista și ordinea sunt cele confirmate de proprietar (2026-06-18):
  * Mecanică · Tinichigerie & vopsitorie · Service roți · Geometrie roți ·
  * Încărcare instalație de climatizare · Spălătorie.
- * TODO: proprietarul confirmă descrierile, ce include și prețurile.
+ * Prețurile NU se afișează pe site — se comunică după diagnoză.
  */
 
 export type ServiceIconKey =
@@ -31,8 +31,6 @@ export interface Serviciu {
   /** Paragraf introductiv pentru pagina dedicată. */
   intro: string;
   durataOrientativa: string;
-  /** RON, „de la". `null` = de completat de proprietar (afișat ca chip). */
-  pretDeLa: number | null;
   include: string[];
   /**
    * Alternativă la lista `include`: un mesaj liber afișat în loc de checklist
@@ -54,7 +52,6 @@ export const servicii: Serviciu[] = [
       "de mecanică. Pornim întotdeauna de la o diagnoză corectă, îți explicăm exact ce " +
       "e de făcut și îți dăm un deviz clar înainte de orice intervenție.",
     durataOrientativa: "în funcție de lucrare", // TODO
-    pretDeLa: null, // TODO
     include: [],
     includeMesaj:
       "Mecanica acoperă o gamă largă de lucrări — de la revizii, frâne și distribuție " +
@@ -86,7 +83,6 @@ export const servicii: Serviciu[] = [
       "De la o zgârietură la o reparație după accident, readucem caroseria la forma " +
       "din fabrică. Vopsim în cabină, cu potrivire computerizată a culorii.",
     durataOrientativa: "1–3 zile", // TODO
-    pretDeLa: null, // TODO
     include: [
       "Îndreptare tinichigerie și înlocuire elemente",
       "Pregătire suprafață și grunduire",
@@ -118,7 +114,6 @@ export const servicii: Serviciu[] = [
       "Schimbi sezonul sau ai prins o pană? Montăm, echilibrăm și reparăm anvelope " +
       "rapid, cu echipamente moderne care nu-ți zgârie jantele.",
     durataOrientativa: "30–60 min", // TODO
-    pretDeLa: null, // TODO
     include: [
       "Montaj și demontaj anvelope (inclusiv jante de aliaj)",
       "Echilibrare electronică pe stand",
@@ -131,7 +126,7 @@ export const servicii: Serviciu[] = [
         intrebare: "Faceți și depozitarea anvelopelor?",
         raspuns:
           "Da, oferim depozitare sezonieră în condiții corecte, ca să nu-ți ocupe " +
-          "loc acasă. // TODO: confirmă tarif și disponibilitate.",
+          "loc acasă. Sună-ne pentru disponibilitate.",
       },
       {
         intrebare: "Orice pană se poate repara?",
@@ -151,7 +146,6 @@ export const servicii: Serviciu[] = [
       "e de vină. O reglăm pe stand 3D, pentru o ținută de drum sigură și anvelope " +
       "care țin mai mult.",
     durataOrientativa: "45–60 min", // TODO
-    pretDeLa: null, // TODO
     include: [
       "Măsurare unghiuri pe stand 3D (față și spate)",
       "Reglaj convergență și unghiuri (cât permite construcția)",
@@ -183,7 +177,6 @@ export const servicii: Serviciu[] = [
       "Aer condiționat slab sau cu miros? Verificăm etanșeitatea, completăm freonul " +
       "și igienizăm sistemul, ca să ai aer rece și curat în orice vară.",
     durataOrientativa: "45–60 min", // TODO
-    pretDeLa: null, // TODO
     include: [
       "Verificare presiuni și test de etanșeitate",
       "Vidare și încărcare freon (R134a / R1234yf)",
@@ -215,7 +208,6 @@ export const servicii: Serviciu[] = [
       "Lăsăm mașina curată lună, pe dinăuntru și pe dinafară. De la spălarea rapidă " +
       "la curățarea detaliată a interiorului, avem grijă de fiecare detaliu.",
     durataOrientativa: "20–60 min", // TODO
-    pretDeLa: null, // TODO
     include: [
       "Spălare exterioară și curățare jante",
       "Aspirare și curățare interior",
@@ -233,8 +225,7 @@ export const servicii: Serviciu[] = [
       {
         intrebare: "Faceți și curățare detaliată a interiorului?",
         raspuns:
-          "Da, de la aspirare și curățarea tapițeriei la igienizare completă. " +
-          "// TODO: confirmă pachetele și tarifele.",
+          "Da, de la aspirare și curățarea tapițeriei la igienizare completă.",
       },
     ],
   },

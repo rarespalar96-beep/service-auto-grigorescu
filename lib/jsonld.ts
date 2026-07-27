@@ -59,14 +59,6 @@ export function autoRepairLd() {
     };
   }
 
-  if (site.contact.lat !== null && site.contact.lng !== null) {
-    data.geo = {
-      "@type": "GeoCoordinates",
-      latitude: site.contact.lat,
-      longitude: site.contact.lng,
-    };
-  }
-
   const ore = openingHours();
   if (ore.length) data.openingHoursSpecification = ore;
 
@@ -99,20 +91,6 @@ export function serviceLd(s: Serviciu) {
   };
 
   if (!isTbd(site.zona)) data.areaServed = site.zona;
-
-  // Offer DOAR cu preț real (fără placeholder).
-  if (s.pretDeLa !== null) {
-    data.offers = {
-      "@type": "Offer",
-      priceCurrency: "RON",
-      price: s.pretDeLa,
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "RON",
-        minPrice: s.pretDeLa,
-      },
-    };
-  }
 
   return data;
 }

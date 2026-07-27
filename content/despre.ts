@@ -1,15 +1,7 @@
 /**
  * Conținut pentru pagina /despre.
- * Povestea/dotările/autorizațiile sunt DRAFT editabil. Cifrele și echipa sunt date
- * individuale → marcate `TBD` și afișate ca chip „DE COMPLETAT". TODO: proprietarul.
+ * Povestea/dotările/autorizațiile sunt DRAFT editabil.
  */
-
-import { TBD } from "./_placeholder";
-
-export interface MembruEchipa {
-  nume: string;
-  rol: string;
-}
 
 export const despre = {
   poveste: [
@@ -41,12 +33,4 @@ export const despre = {
   autorizatii: [
     "Service auto autorizat RAR",
   ],
-
-  /** Echipa — nume + roluri reale de la proprietar. TODO. */
-  echipa: [
-    { nume: TBD, rol: TBD },
-    { nume: TBD, rol: TBD },
-    { nume: TBD, rol: TBD },
-    { nume: TBD, rol: TBD },
-  ] as MembruEchipa[],
 };

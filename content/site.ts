@@ -1,13 +1,12 @@
 /**
  * SURSA UNICĂ DE ADEVĂR pentru toate datele service-ului.
  *
- * MOD DEMO: datele individuale (telefon, adresă, rating etc.) sunt
- * marcate `TBD` (text) sau `null` (numeric) și apar în site ca un chip vizibil
- * „DE COMPLETAT". Proprietarul le furnizează.
+ * Câmpurile încă necompletate sunt marcate `TBD` (text) sau `null` (numeric) și
+ * apar în site ca un chip vizibil „DE COMPLETAT".
  * Înlocuiește valorile, NU schimba structura. Helper-e în `content/_placeholder.ts`.
  */
 
-import { TBD, isTbd, orTbd } from "./_placeholder";
+import { isTbd, orTbd } from "./_placeholder";
 
 export interface ProgramZi {
   zi: string;
@@ -55,9 +54,6 @@ export const site = {
     judet: "București",
     codPostal: "077160",
     tara: "România",
-    /** Coordonate pentru hartă/JSON-LD geo. TODO: din Google Maps. */
-    lat: null as number | null, // TODO
-    lng: null as number | null, // TODO
   },
 
   /**
@@ -102,16 +98,16 @@ export const site = {
     placeId: "", // TODO
     /** Link direct către profilul Google (pentru „Vezi toate recenziile"). */
     profilUrl: "https://www.google.com/maps?cid=13586452098619371626",
-    /** Rating agregat REAL din Google — actualizat manual. TODO. */
-    rating: null as number | null, // TODO
-    /** Număr total de recenzii REAL din Google. TODO. */
-    numarRecenzii: null as number | null, // TODO
+    /** Rating agregat REAL din Google — actualizat manual (2026-07-27). */
+    rating: 4.0 as number | null,
+    /** Număr total de recenzii REAL din Google — actualizat manual (2026-07-27). */
+    numarRecenzii: 80 as number | null,
     /**
      * Setează `true` DOAR după ce rating/numarRecenzii sunt valorile REALE din
      * Google. Controlează dacă `aggregateRating` apare în JSON-LD — markup de
      * recenzii false e penalizat de Google.
      */
-    ratingReal: false, // TODO: true când datele sunt reale
+    ratingReal: true,
   },
 
   social: {
@@ -139,9 +135,6 @@ export const site = {
     { serviciu: "Mecanică", durata: "3–6 luni" },
     { serviciu: "Vopsitorie", durata: "1 an" },
   ] as { serviciu: string; durata: string }[],
-
-  /** Instrucțiuni de acces și parcare (pagina /contact). TODO. */
-  instructiuniAcces: TBD, // TODO
 } as const;
 
 export type Site = typeof site;

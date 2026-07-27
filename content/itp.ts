@@ -74,9 +74,6 @@ export const itp = {
     "Cartea de identitate a vehiculului",
   ],
 
-  /** Preț ITP — date individuale ale stației → de completat. `null` = chip. */
-  pretDeLa: null as number | null, // TODO: prețul ITP la stația proprie
-
   /**
    * Notă de acces specifică stației de ITP — intrarea diferă de poarta principală a
    * service-ului. Afișată în cardul de contact de pe pagina /itp.
