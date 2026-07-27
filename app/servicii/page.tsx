@@ -28,16 +28,17 @@ export default function ServiciiPage() {
             <span className="mx-2" aria-hidden>/</span>
             <span className="text-ink-invert">Servicii</span>
           </nav>
-          <h1 className="mt-4 flex flex-wrap items-center gap-x-2 text-4xl font-bold uppercase sm:text-5xl">
-            Servicii auto în{" "}
-            {isTbd(site.zona) ? <Placeholder label="localitate" /> : site.zona}
-          </h1>
-          <div className="mt-5 gauge-rule gauge-rule-accent h-2.5 max-w-xs" aria-hidden />
-          <p className="mt-5 max-w-2xl text-lg text-muted-invert">
-            Tot ce are nevoie mașina ta, sub același acoperiș — cu diagnoză înainte de
-            orice intervenție și piese cu garanție. Lucrăm multimarcă, practic orice
-            mașină, mai puțin cele full electric.
-          </p>
+          <div className="heading-frame heading-frame-invert mt-5 max-w-3xl px-6 py-6 sm:px-8 sm:py-7">
+            <h1 className="flex flex-wrap items-center gap-x-2 text-4xl font-bold uppercase sm:text-5xl">
+              Servicii auto în{" "}
+              {isTbd(site.zona) ? <Placeholder label="localitate" /> : site.zona}
+            </h1>
+            <p className="mt-3 text-lg text-muted-invert">
+              Tot ce are nevoie mașina ta, sub același acoperiș — cu diagnoză înainte de
+              orice intervenție și piese cu garanție. Lucrăm multimarcă, practic orice
+              mașină, mai puțin cele full electric.
+            </p>
+          </div>
         </div>
       </section>
 

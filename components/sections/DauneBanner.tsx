@@ -11,7 +11,7 @@ export default function DauneBanner() {
     <section className="relative overflow-hidden bg-blueprint text-ink-invert">
       <div className="accent-glow pointer-events-none absolute inset-0" aria-hidden />
       <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-8 px-4 py-16 sm:px-6 sm:py-20 md:flex-row md:items-center md:justify-between md:gap-12">
-        <div className="min-w-0">
+        <div className="heading-frame heading-frame-invert min-w-0 px-6 py-6 sm:px-8 sm:py-7">
           <p className="flex items-center gap-2 font-display text-sm font-semibold uppercase tracking-widest text-accent-light">
             <span className="grid h-9 w-9 place-items-center rounded-md bg-accent/[0.12] text-accent-light ring-1 ring-accent/20">
               <ShieldIcon />
@@ -23,9 +23,7 @@ export default function DauneBanner() {
             Punct de Constatare Daune
           </h2>
 
-          <div className="mt-5 gauge-rule gauge-rule-accent h-2.5 max-w-sm" aria-hidden />
-
-          <p className="mt-5 max-w-xl text-lg text-muted-invert">
+          <p className="mt-4 max-w-xl text-lg text-muted-invert">
             Ai avut un accident? Preluăm partea complicată: deschiderea dosarului de
             daună, constatarea cu asigurătorul și reparația prin asigurare — cu mașină
             la schimb pe durata lucrării.

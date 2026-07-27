@@ -47,8 +47,6 @@ export default function Hero() {
             <span className="text-accent">în {zona}.</span>
           </h1>
 
-          <div className="mt-6 gauge-rule gauge-rule-accent h-2.5 max-w-sm" aria-hidden />
-
           <p className="mt-6 max-w-xl text-lg text-muted-invert">
             Diagnoză onestă, lucrări cu garanție și prețuri corecte. Te programezi
             online în câteva secunde — restul îl rezolvăm noi.

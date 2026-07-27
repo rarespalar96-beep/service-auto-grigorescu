@@ -6,7 +6,7 @@ interface Props {
   align?: "left" | "center";
 }
 
-/** Antet consistent: eyebrow accent + riglă-gauge + titlu + subtitlu opțional. */
+/** Antet consistent: chenar tehnic care cuprinde eyebrow + titlu + subtitlu opțional. */
 export default function SectionHeading({
   eyebrow,
   title,
@@ -19,7 +19,11 @@ export default function SectionHeading({
   const center = align === "center";
 
   return (
-    <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+    <div
+      className={`heading-frame px-6 py-6 sm:px-8 sm:py-7 ${
+        tone === "dark" ? "heading-frame-invert" : ""
+      } ${center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}`}
+    >
       {eyebrow && (
         <p
           className={`font-display text-sm font-semibold uppercase tracking-widest ${
@@ -29,11 +33,11 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <div
-        className={`mt-3 gauge-rule gauge-rule-accent h-2.5 w-28 ${center ? "mx-auto" : ""}`}
-        aria-hidden
-      />
-      <h2 className={`mt-4 text-3xl font-bold uppercase sm:text-4xl ${ink}`}>{title}</h2>
+      <h2
+        className={`text-3xl font-bold uppercase sm:text-4xl ${ink} ${eyebrow ? "mt-3" : ""}`}
+      >
+        {title}
+      </h2>
       {subtitle && <p className={`mt-3 text-lg ${muted}`}>{subtitle}</p>}
     </div>
   );

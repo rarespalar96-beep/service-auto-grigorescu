@@ -7,7 +7,7 @@ interface Props {
   parinte?: { label: string; href: string };
 }
 
-/** Antet de pagină pe fundal antracit, cu breadcrumb și riglă-gauge. */
+/** Antet de pagină pe fundal antracit, cu breadcrumb și chenar tehnic pe titlu. */
 export default function PageHeader({ titlu, subtitlu, parinte }: Props) {
   return (
     <section className="bg-blueprint text-ink-invert">
@@ -24,9 +24,10 @@ export default function PageHeader({ titlu, subtitlu, parinte }: Props) {
           <span className="text-ink-invert">{titlu}</span>
         </nav>
 
-        <h1 className="mt-4 text-4xl font-bold uppercase sm:text-5xl">{titlu}</h1>
-        <div className="mt-5 gauge-rule gauge-rule-accent h-2.5 max-w-xs" aria-hidden />
-        {subtitlu && <p className="mt-5 max-w-2xl text-lg text-muted-invert">{subtitlu}</p>}
+        <div className="heading-frame heading-frame-invert mt-5 max-w-3xl px-6 py-6 sm:px-8 sm:py-7">
+          <h1 className="text-4xl font-bold uppercase sm:text-5xl">{titlu}</h1>
+          {subtitlu && <p className="mt-3 text-lg text-muted-invert">{subtitlu}</p>}
+        </div>
       </div>
     </section>
   );

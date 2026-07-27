@@ -116,6 +116,51 @@
 }
 
 /* ============================================================================
+   ELEMENT-SEMNĂTURĂ — „chenar tehnic" pentru antete de secțiune/pagină.
+   Înlocuiește vechea riglă accent care plutea sub titlu fără să însemne nimic.
+   Fir subțire de contur + colțare pline (ca reperele de pe un desen tehnic),
+   ca textul să fie cuprins, nu doar subliniat.
+   `--frame-color` setează culoarea; vezi varianta -invert pentru fundal închis.
+   ========================================================================== */
+@utility heading-frame {
+  --frame-color: var(--color-accent);
+  --frame-corner: 16px;
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--frame-color) 22%, transparent);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: var(--frame-corner);
+    height: var(--frame-corner);
+    border: 2px solid var(--frame-color);
+    pointer-events: none;
+  }
+
+  /* colțar stânga-sus */
+  &::before {
+    top: -1px;
+    left: -1px;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+
+  /* colțar dreapta-jos */
+  &::after {
+    right: -1px;
+    bottom: -1px;
+    border-left-color: transparent;
+    border-top-color: transparent;
+  }
+}
+
+/* Pe fundal închis accentul plin nu trece AA — folosim varianta deschisă. */
+@utility heading-frame-invert {
+  --frame-color: var(--color-accent-light);
+}
+
+/* ============================================================================
    SCALĂ DE ELEVAȚIE — umbre subtile, multi-strat, calibrate pe paleta neutră.
    Înlocuiesc shadow-sm/lg generice pe carduri pentru un finish mai premium.
    ========================================================================== */

@@ -71,15 +71,15 @@ export default async function ServiciuPage({
             <span className="text-ink-invert">{s.nume}</span>
           </nav>
 
-          <div className="mt-6 flex items-center gap-4">
-            <span className="grid h-14 w-14 place-items-center rounded-lg border border-accent/25 bg-accent/10 text-accent ring-1 ring-inset ring-white/5">
-              <ServiceIcon name={s.icon} size={32} />
-            </span>
-            <h1 className="text-4xl font-bold uppercase sm:text-5xl">{s.nume}</h1>
+          <div className="heading-frame heading-frame-invert mt-6 max-w-3xl px-6 py-6 sm:px-8 sm:py-7">
+            <div className="flex items-center gap-4">
+              <span className="grid h-14 w-14 place-items-center rounded-lg border border-accent/25 bg-accent/10 text-accent ring-1 ring-inset ring-white/5">
+                <ServiceIcon name={s.icon} size={32} />
+              </span>
+              <h1 className="text-4xl font-bold uppercase sm:text-5xl">{s.nume}</h1>
+            </div>
+            <p className="mt-4 text-lg text-muted-invert">{s.intro}</p>
           </div>
-
-          <div className="mt-5 gauge-rule gauge-rule-accent h-2.5 max-w-xs" aria-hidden />
-          <p className="mt-5 max-w-2xl text-lg text-muted-invert">{s.intro}</p>
         </div>
       </section>
 
