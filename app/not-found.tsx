@@ -1,6 +1,6 @@
 import Link from "next/link";
 import BookingButton from "@/components/cta/BookingButton";
-import PhoneLink from "@/components/cta/PhoneLink";
+import CallButton from "@/components/cta/CallButton";
 
 export default function NotFound() {
   return (
@@ -34,12 +34,7 @@ export default function NotFound() {
 
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
           <BookingButton campaign="404">Programează-te online</BookingButton>
-          <PhoneLink
-            sursa="404"
-            className="font-display text-base font-semibold uppercase tracking-wide text-ink-invert hover:text-accent"
-          >
-            sau sună-ne
-          </PhoneLink>
+          <CallButton sursa="404" tone="dark" />
         </div>
       </div>
     </section>

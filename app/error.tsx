@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import PhoneLink from "@/components/cta/PhoneLink";
+import CallButton from "@/components/cta/CallButton";
 
 /**
  * Stare de eroare globală (în română). Client component, conform cerinței Next.
@@ -46,12 +46,7 @@ export default function Error({
           >
             Pagina principală
           </Link>
-          <PhoneLink
-            sursa="error"
-            className="font-display text-base font-semibold uppercase tracking-wide text-ink-invert hover:text-accent"
-          >
-            Sună-ne
-          </PhoneLink>
+          <CallButton sursa="error" tone="dark" />
         </div>
       </div>
     </section>

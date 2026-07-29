@@ -2,37 +2,30 @@
 
 import { bookingUrl, externalLinkAttrs } from "@/lib/links";
 import { trackProgramare } from "@/lib/analytics";
+import { btn, type BtnSize, type BtnVariant } from "@/components/cta/buttonStyles";
 
-type Variant = "primary" | "ghost" | "bar";
+/** Fundalul pe care stă butonul — decide culoarea plină (albul nu se vede pe deschis). */
+type Tone = "dark" | "light" | "bar";
 
-const base =
-  "inline-flex items-center justify-center gap-2 font-display font-semibold " +
-  "uppercase tracking-wide transition focus-visible:outline-none active:translate-y-px";
-
-const variants: Record<Variant, string> = {
-  // CTA principal — singurul loc unde apare galbenul
-  primary:
-    "bg-accent text-accent-ink hover:bg-accent-600 px-5 py-3 text-base rounded-md " +
-    "shadow-sm",
-  // CTA în contexte deja accentuate (ex. lângă alt buton galben)
-  ghost:
-    "border border-accent text-accent hover:bg-accent hover:text-accent-ink " +
-    "px-5 py-3 text-base rounded-md",
-  // Jumătatea dreaptă a barei mobile fixe
-  bar: "bg-accent text-accent-ink h-full w-full text-base",
+const varianteDupaTon: Record<Tone, BtnVariant> = {
+  dark: "book-dark",
+  light: "book-light",
+  bar: "bar-book",
 };
 
 interface Props {
   /** Identifică pagina-sursă pentru UTM (ex. "home", "servicii-frane"). */
   campaign: string;
-  variant?: Variant;
+  tone?: Tone;
+  size?: BtnSize;
   className?: string;
   children?: React.ReactNode;
 }
 
 export default function BookingButton({
   campaign,
-  variant = "primary",
+  tone = "dark",
+  size = "md",
   className = "",
   children,
 }: Props) {
@@ -41,7 +34,7 @@ export default function BookingButton({
       href={bookingUrl(campaign)}
       {...externalLinkAttrs}
       onClick={() => trackProgramare(campaign)}
-      className={`${base} ${variants[variant]} ${className}`}
+      className={btn(varianteDupaTon[tone], size, className)}
     >
       {children ?? "Programează-te"}
     </a>

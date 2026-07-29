@@ -63,7 +63,7 @@ export default function RootLayout({
         <JsonLd data={autoRepairLd()} />
         <Header />
         {/* pb pe mobil = înălțimea barei fixe (h-14) ca să nu acopere conținutul */}
-        <main className="flex-1 pb-14 lg:pb-0">{children}</main>
+        <main className="flex-1 pb-14 xl:pb-0">{children}</main>
         <Footer />
         <MobileCTABar />
         <CookieBanner />

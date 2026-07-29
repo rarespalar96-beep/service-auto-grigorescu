@@ -3,7 +3,7 @@ import { site, adresaCompleta, adresaTbd } from "@/content/site";
 import { isTbd, orTbd } from "@/content/_placeholder";
 import { directionsUrl, externalLinkAttrs } from "@/lib/links";
 import PageHeader from "@/components/ui/PageHeader";
-import PhoneLink from "@/components/cta/PhoneLink";
+import CallButton from "@/components/cta/CallButton";
 import BookingButton from "@/components/cta/BookingButton";
 import LazyMap from "@/components/integrations/LazyMap";
 import Placeholder from "@/components/ui/Placeholder";
@@ -31,11 +31,8 @@ export default function ContactPage() {
           <div>
             <dl className="space-y-6">
               <Bloc termen="Telefon">
-                <PhoneLink
-                  sursa="pagina-contact"
-                  className="font-display text-2xl font-bold uppercase text-ink hover:text-accent"
-                />
-                <p className="mt-1 text-sm text-muted">Click-to-call de pe telefon.</p>
+                <CallButton sursa="pagina-contact" tone="light" size="lg" />
+                <p className="mt-2 text-sm text-muted">Click-to-call de pe telefon.</p>
               </Bloc>
 
               <Bloc termen="Email">
@@ -78,7 +75,7 @@ export default function ContactPage() {
             </dl>
 
             <div className="mt-8">
-              <BookingButton campaign="pagina-contact">Programează-te online</BookingButton>
+              <BookingButton campaign="pagina-contact" tone="light">Programează-te online</BookingButton>
             </div>
             <p className="mt-3 text-sm text-muted">
               Nu folosim formular de contact — telefonul și programarea online acoperă tot.

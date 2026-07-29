@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { site } from "@/content/site";
-import { isTbd, orTbd } from "@/content/_placeholder";
+import { orTbd } from "@/content/_placeholder";
 import { servicii, getServiciu } from "@/content/servicii";
 import ServiceIcon from "@/components/ui/ServiceIcon";
-import Placeholder from "@/components/ui/Placeholder";
 import ServiceCard from "@/components/ui/ServiceCard";
 import BookingButton from "@/components/cta/BookingButton";
-import PhoneLink from "@/components/cta/PhoneLink";
+import CallButton from "@/components/cta/CallButton";
 import CtaBand from "@/components/sections/CtaBand";
 import JsonLd from "@/components/seo/JsonLd";
 import { serviceLd, faqLd, breadcrumbLd } from "@/lib/jsonld";
@@ -95,13 +94,8 @@ export default async function ServiciuPage({
                   {s.includeMesaj}
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <BookingButton campaign={campaign}>Programează o diagnoză</BookingButton>
-                  <PhoneLink
-                    sursa={campaign}
-                    className="inline-flex items-center justify-center gap-2 rounded-md border border-line px-5 py-3 font-display text-base font-semibold uppercase tracking-wide text-ink transition-colors hover:border-accent"
-                  >
-                    Sună să discutăm
-                  </PhoneLink>
+                  <BookingButton campaign={campaign} tone="light">Programează o diagnoză</BookingButton>
+                  <CallButton sursa={campaign} tone="light" />
                 </div>
               </>
             ) : (
@@ -157,20 +151,10 @@ export default async function ServiciuPage({
                 </div>
               </dl>
 
-              <BookingButton campaign={campaign} className="mt-6 w-full">
+              <BookingButton campaign={campaign} tone="light" className="mt-6 w-full">
                 Programează-te
               </BookingButton>
-              <PhoneLink
-                sursa={campaign}
-                className="mt-3 flex w-full items-center justify-center gap-2 rounded-md border border-line px-5 py-3 font-display text-base font-semibold uppercase tracking-wide text-ink transition-colors hover:border-accent"
-              >
-                Sună:{" "}
-                {isTbd(site.contact.telefonAfisat) ? (
-                  <Placeholder label="Telefon" />
-                ) : (
-                  site.contact.telefonAfisat
-                )}
-              </PhoneLink>
+              <CallButton sursa={campaign} tone="light" className="mt-3 w-full" />
 
               <p className="mt-4 text-xs text-muted">
                 Cel mai bine ne suni să afli prețul, sau ți-l spunem când ajungi la

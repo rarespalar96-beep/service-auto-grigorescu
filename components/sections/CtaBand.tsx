@@ -1,5 +1,5 @@
 import BookingButton from "@/components/cta/BookingButton";
-import PhoneLink from "@/components/cta/PhoneLink";
+import CallButton from "@/components/cta/CallButton";
 
 interface Props {
   campaign: string;
@@ -23,12 +23,7 @@ export default function CtaBand({
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <BookingButton campaign={campaign}>Programează-te online</BookingButton>
-          <PhoneLink
-            sursa={campaign}
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-antracit-600 px-5 py-3 font-display text-base font-semibold uppercase tracking-wide text-ink-invert transition-colors hover:border-accent hover:text-accent"
-          >
-            Sună acum
-          </PhoneLink>
+          <CallButton sursa={campaign} tone="dark" />
         </div>
       </div>
     </section>

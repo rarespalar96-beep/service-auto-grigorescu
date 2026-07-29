@@ -3,6 +3,7 @@ import { isTbd } from "@/content/_placeholder";
 import { directionsUrl, externalLinkAttrs } from "@/lib/links";
 import PhoneLink from "@/components/cta/PhoneLink";
 import BookingButton from "@/components/cta/BookingButton";
+import CallButton from "@/components/cta/CallButton";
 import LazyMap from "@/components/integrations/LazyMap";
 import Placeholder from "@/components/ui/Placeholder";
 import ProgramDepartamente from "@/components/sections/ProgramDepartamente";
@@ -68,8 +69,9 @@ export default function ContactMap() {
             </Rand>
           </dl>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <BookingButton campaign="home-contact">Programează-te online</BookingButton>
+            <CallButton sursa="home-contact" tone="dark" />
           </div>
         </div>
 

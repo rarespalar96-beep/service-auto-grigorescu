@@ -5,7 +5,7 @@ import { itp } from "@/content/itp";
 import PageHeader from "@/components/ui/PageHeader";
 import Placeholder from "@/components/ui/Placeholder";
 import BookingButton from "@/components/cta/BookingButton";
-import PhoneLink from "@/components/cta/PhoneLink";
+import CallButton from "@/components/cta/CallButton";
 import CtaBand from "@/components/sections/CtaBand";
 import JsonLd from "@/components/seo/JsonLd";
 import { faqLd, breadcrumbLd } from "@/lib/jsonld";
@@ -126,20 +126,10 @@ export default function ItpPage() {
                 </div>
               </dl>
 
-              <BookingButton campaign={campaign} className="mt-6 w-full">
+              <BookingButton campaign={campaign} tone="light" className="mt-6 w-full">
                 Programează ITP-ul
               </BookingButton>
-              <PhoneLink
-                sursa={campaign}
-                className="mt-3 flex w-full items-center justify-center gap-2 rounded-md border border-line px-5 py-3 font-display text-base font-semibold uppercase tracking-wide text-ink transition-colors hover:border-accent"
-              >
-                Sună:{" "}
-                {isTbd(site.contact.telefonAfisat) ? (
-                  <Placeholder label="Telefon" />
-                ) : (
-                  site.contact.telefonAfisat
-                )}
-              </PhoneLink>
+              <CallButton sursa={campaign} tone="light" className="mt-3 w-full" />
 
               <dl className="mt-6 space-y-3 border-t border-line pt-5 text-sm">
                 <div className="flex items-baseline justify-between gap-4">
