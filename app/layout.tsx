@@ -28,12 +28,16 @@ const body = Barlow({
 });
 
 const zonaMeta = orTbd(site.zona, "localitate");
+// Varianta descriptivă (nume + slogan + oraș) rămâne pentru OpenGraph: la partajare
+// nu concurează cu nimic, iar contextul ajută. Titlul din tab e doar numele, mai jos.
 const titluMeta = `${site.nume} — ${site.slogan} în ${zonaMeta}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: titluMeta,
+    // Homepage-ul primește exact numele, fără sufix. Nu e nevoie de `absolute`:
+    // `template` se aplică doar segmentelor COPIL, nu segmentului unde e definit.
+    default: site.nume,
     template: `%s · ${site.nume}`,
   },
   description: site.descriere,
