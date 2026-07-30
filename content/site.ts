@@ -94,8 +94,12 @@ export const site = {
   bookingUrl: "https://gatadedrum.com", // TODO: pagina dedicată service-ului
 
   google: {
-    /** Place ID din Google Business Profile — hartă, indicații, recenzii v2. TODO. */
-    placeId: "", // TODO
+    /**
+     * Place ID din Google Business Profile — folosit ca `destination_place_id` în
+     * linkul de indicații (`lib/links.ts`). Verificat: corespunde CID-ului din
+     * `profilUrl` de mai jos (feature id 0x40b1ff0048c4d4b7:0xbc8cc6331811706a).
+     */
+    placeId: "ChIJt9TESAD_sUARanARGDPGjLw",
     /** Link direct către profilul Google (pentru „Vezi toate recenziile"). */
     profilUrl: "https://www.google.com/maps?cid=13586452098619371626",
     /** Rating agregat REAL din Google — actualizat manual (2026-07-27). */
