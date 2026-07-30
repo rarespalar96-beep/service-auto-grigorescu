@@ -25,7 +25,7 @@ export const site = {
   /** Sloganul scurt din hero / title. */
   slogan: "Service auto autorizat RAR",
 
-  /** URL-ul canonic al site-ului (fără slash final). Config pt. metadata/sitemap. TODO. */
+  /** URL-ul canonic al site-ului (fără slash final). Config pt. metadata/sitemap. */
   url: "https://servicegrigorescu.ro", // domeniu real (.ro, apex) — canonic pt. metadataBase/sitemap/OG
 
   /** Interval de preț pentru JSON-LD (Schema.org). */
@@ -114,20 +114,6 @@ export const site = {
     facebook: "https://www.facebook.com/p/Service-Auto-Grigorescu-Srl-100057670860951/",
     instagram: "", // nu există (proprietarul are doar Facebook)
   },
-
-  /** Mărci deservite — șablon editabil; proprietarul confirmă lista reală. TODO. */
-  marciDeservite: [
-    "Volkswagen",
-    "Audi",
-    "Skoda",
-    "Dacia",
-    "Renault",
-    "Ford",
-    "Opel",
-    "BMW",
-    "Mercedes-Benz",
-    "Toyota",
-  ], // TODO
 
   /** Garanție oferită la lucrări — variază în funcție de serviciu. */
   garantii: [

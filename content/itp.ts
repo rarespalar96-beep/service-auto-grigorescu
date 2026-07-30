@@ -1,10 +1,9 @@
 /**
  * Conținut pentru pagina „ITP" — Inspecția Tehnică Periodică.
  *
- * MOD DEMO: descrierile/listele/FAQ sunt șablon editabil (NU date individuale) și
- * pot rămâne ca atare. Datele care țin EXCLUSIV de stația de ITP a service-ului
- * (programul, prețul, nr. autorizație) rămân `null`/`TBD` și apar ca un chip
- * „DE COMPLETAT" în UI. Înlocuiește valorile, NU schimba structura.
+ * Descrierile/listele/FAQ sunt șablon editabil. Prețul ITP nu se afișează
+ * (se comunică la telefon), iar programul stației vine din
+ * `site.programDepartamente`.
  */
 
 export interface PasItp {

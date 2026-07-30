@@ -3,10 +3,9 @@
  * auto (RCA), constatare cu asigurătorul, devize și reparații prin
  * asigurare.
  *
- * MOD DEMO: descrierile/pașii/FAQ sunt șablon editabil (NU date individuale) și
- * pot rămâne ca atare. Datele care țin EXCLUSIV de service — lista asigurătorilor
- * cu decontare directă — sunt GOLITE și apar ca un chip „DE COMPLETAT" în UI.
- * Înlocuiește valorile, NU schimba structura.
+ * Descrierile/pașii/FAQ sunt șablon editabil. Pagina NU listează asigurători
+ * anume — textul din `app/constatare-daune/page.tsx` spune că lucrăm cu toate
+ * companiile de asigurări.
  */
 
 export interface PasConstatare {
@@ -119,13 +118,6 @@ export const constatareDaune = {
    * este informat ce acte să aibă la el după discuția telefonică. Vezi mesajul din
    * `app/constatare-daune/page.tsx`.
    */
-
-  /**
-   * Asigurători cu care service-ul are DECONTARE DIRECTĂ. Date individuale ale
-   * service-ului → de completat de proprietar. Gol = se afișează chip
-   * „DE COMPLETAT" în loc de o listă fictivă. TODO.
-   */
-  asiguratoriParteneri: [] as string[], // TODO: lista reală a asigurătorilor parteneri
 
   /** Întrebări frecvente — șablon editabil. */
   faq: [
