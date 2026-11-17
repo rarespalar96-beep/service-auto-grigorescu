@@ -102,10 +102,10 @@ export const site = {
     placeId: "ChIJt9TESAD_sUARanARGDPGjLw",
     /** Link direct către profilul Google (pentru „Vezi toate recenziile"). */
     profilUrl: "https://www.google.com/maps?cid=13586452098619371626",
-    /** Rating agregat REAL din Google — actualizat manual (2026-07-27). */
-    rating: 4.0 as number | null,
-    /** Număr total de recenzii REAL din Google — actualizat manual (2026-07-27). */
-    numarRecenzii: 80 as number | null,
+    /** Rating agregat REAL din Google — actualizat manual (2026-11-17). */
+    rating: 4.5 as number | null,
+    /** Număr total de recenzii REAL din Google — actualizat manual (2026-11-17). */
+    numarRecenzii: 163 as number | null,
     /**
      * Setează `true` DOAR după ce rating/numarRecenzii sunt valorile REALE din
      * Google. Controlează dacă `aggregateRating` apare în JSON-LD — markup de

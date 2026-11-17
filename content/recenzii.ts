@@ -4,6 +4,7 @@
  * Decizie inițială (2026-06-22): fără notă agregată — media era 3,5 din 55.
  * REVIZUIT (2026-07-27): media a urcat la 4,0 din 80 de recenzii, deci afișăm
  * agregatul pe site și în JSON-LD (`site.google.ratingReal: true`).
+ * ACTUALIZAT (2026-11-17): 4,5 din 163 de recenzii.
  *
  * Testimonialele de mai jos rămân alese MANUAL, chiar dacă cifrele agregate ar
  * ajunge cândva să vină din Places API (varianta B): API-ul întoarce maximum 5
