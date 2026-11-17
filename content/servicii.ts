@@ -39,11 +39,18 @@ export interface Serviciu {
    */
   includeMesaj?: string;
   faq: ServiciuFaq[];
+  /**
+   * Categoria pe gatadedrum.com (`&cat=`) în care aterizează butoanele de programare
+   * de pe pagina serviciului. Valoarea trebuie să fie EXACT cea de pe platformă.
+   * Lipsă → pagina generală a service-ului.
+   */
+  programareCat?: string;
 }
 
 export const servicii: Serviciu[] = [
   {
     slug: "mecanica",
+    programareCat: "mecanica",
     nume: "Mecanică",
     sumar: "Revizii, frâne, distribuție, ambreiaj, suspensie și diagnoză — toată mecanica, într-un loc.",
     icon: "mecanica",
@@ -76,6 +83,7 @@ export const servicii: Serviciu[] = [
   },
   {
     slug: "tinichigerie-vopsitorie",
+    programareCat: "tinichigerie-vopsitorie",
     nume: "Tinichigerie & vopsitorie",
     sumar: "Îndreptare, pregătire și vopsire în cabină, cu potrivire de culoare.",
     icon: "tinichigerie",
@@ -107,6 +115,7 @@ export const servicii: Serviciu[] = [
   },
   {
     slug: "service-roti",
+    programareCat: "service-roti",
     nume: "Service roți",
     sumar: "Montaj, echilibrare, reparații pană și depozitare sezonieră a anvelopelor.",
     icon: "roti",
@@ -138,6 +147,7 @@ export const servicii: Serviciu[] = [
   },
   {
     slug: "geometrie-roti",
+    programareCat: "geometrie-roti",
     nume: "Geometrie roți",
     sumar: "Reglaj unghiuri pe stand 3D pentru uzură uniformă și ținută corectă.",
     icon: "geometrie",
@@ -170,6 +180,7 @@ export const servicii: Serviciu[] = [
   },
   {
     slug: "incarcare-climatizare",
+    programareCat: "climatizare",
     nume: "Încărcare instalație de climatizare",
     sumar: "Verificare etanșeitate, încărcare freon și igienizarea sistemului de climatizare.",
     icon: "clima",

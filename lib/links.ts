@@ -1,14 +1,27 @@
 import { site } from "@/content/site";
 import { isTbd } from "@/content/_placeholder";
 
+/** Secțiunea de pe gatadedrum.com în care aterizează programarea. */
+export type BookingTip = "servicii" | "itp" | "daune";
+
+/** Ținta programării: secțiunea (`tip`) și, opțional, categoria (`cat`) pe gatadedrum. */
+export interface BookingTarget {
+  tip?: BookingTip;
+  cat?: string;
+}
+
 /**
  * Construiește URL-ul de programare către gatadedrum.com cu UTM-uri.
- * `campaign` identifică pagina-sursă (ex. "home", "servicii-frane").
+ * `campaign` identifică butonul-sursă (ex. "home-hero", "servicii-mecanica").
+ * Fără `target` → `/servicii/bucuresti?service=40` (pagina generală a service-ului).
  */
-export function bookingUrl(campaign: string): string {
-  const url = new URL(site.bookingUrl);
+export function bookingUrl(campaign: string, target: BookingTarget = {}): string {
+  const { origin, oras, serviceId } = site.booking;
+  const url = new URL(`/${target.tip ?? "servicii"}/${oras}`, origin);
+  url.searchParams.set("service", serviceId);
+  if (target.cat) url.searchParams.set("cat", target.cat);
   url.searchParams.set("utm_source", "servicegrigorescu.ro");
-  url.searchParams.set("utm_medium", "cta");
+  url.searchParams.set("utm_medium", "referral");
   url.searchParams.set("utm_campaign", campaign);
   return url.toString();
 }

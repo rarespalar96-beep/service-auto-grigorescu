@@ -88,11 +88,16 @@ export const site = {
   },
 
   /**
-   * Pagina service-ului pe platforma externă de programări (gatadedrum.com).
-   * SINGURA sursă a URL-ului de programare: fără UTM-uri aici — `bookingUrl()` din
-   * `lib/links.ts` le adaugă per buton (utm_source/utm_medium/utm_campaign).
+   * Service-ul pe platforma externă de programări (gatadedrum.com).
+   * SINGURA sursă a URL-ului de programare: `bookingUrl()` din `lib/links.ts` compune
+   * `{origin}/{tip}/{oras}?service={serviceId}[&cat=…]` + UTM-urile per buton.
+   * `tip` = "servicii" (implicit) | "itp" | "daune".
    */
-  bookingUrl: "https://gatadedrum.com/servicii/bucuresti?service=40",
+  booking: {
+    origin: "https://gatadedrum.com",
+    oras: "bucuresti",
+    serviceId: "40",
+  },
 
   google: {
     /**

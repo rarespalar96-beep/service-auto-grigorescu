@@ -79,6 +79,7 @@ export default async function ArticolPage({
 
       <CtaBand
         campaign={`blog-${a.slug}`}
+        bookingTarget={a.programare}
         titlu="Mașina ta are nevoie de o verificare?"
         subtitlu="Programează-te online și lasă diagnoza pe noi."
       />

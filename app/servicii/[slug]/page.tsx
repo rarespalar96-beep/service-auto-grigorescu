@@ -45,6 +45,7 @@ export default async function ServiciuPage({
   if (!s) notFound();
 
   const campaign = `servicii-${s.slug}`;
+  const programare = { cat: s.programareCat };
   const altele = servicii.filter((x) => x.slug !== s.slug).slice(0, 3);
 
   return (
@@ -94,7 +95,7 @@ export default async function ServiciuPage({
                   {s.includeMesaj}
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <BookingButton campaign={campaign} tone="light">Programează o diagnoză</BookingButton>
+                  <BookingButton campaign={campaign} target={programare} tone="light">Programează o diagnoză</BookingButton>
                   <CallButton sursa={campaign} tone="light" />
                 </div>
               </>
@@ -151,7 +152,7 @@ export default async function ServiciuPage({
                 </div>
               </dl>
 
-              <BookingButton campaign={campaign} tone="light" className="mt-6 w-full">
+              <BookingButton campaign={campaign} target={programare} tone="light" className="mt-6 w-full">
                 Programează-te
               </BookingButton>
               <CallButton sursa={campaign} tone="light" className="mt-3 w-full" />
@@ -179,7 +180,7 @@ export default async function ServiciuPage({
         </div>
       </section>
 
-      <CtaBand campaign={`${campaign}-jos`} titlu={`Programează ${s.nume.toLowerCase()}`} />
+      <CtaBand campaign={`${campaign}-jos`} bookingTarget={programare} titlu={`Programează ${s.nume.toLowerCase()}`} />
     </>
   );
 }

@@ -4,6 +4,8 @@
  * pentru JSON-LD (Faza 5). TODO: proprietarul revizuiește/extinde conținutul.
  */
 
+import type { BookingTarget } from "@/lib/links";
+
 export type Bloc =
   | { tip: "p"; text: string }
   | { tip: "h2"; text: string }
@@ -18,11 +20,14 @@ export interface Articol {
   autor: string;
   minuteCitire: number;
   corp: Bloc[];
+  /** Unde duce CTA-ul de programare de sub articol; lipsă → pagina generală a service-ului. */
+  programare?: BookingTarget;
 }
 
 export const articole: Articol[] = [
   {
     slug: "tot-ce-trebuie-sa-stii-despre-itp",
+    programare: { tip: "itp" },
     titlu: "Tot ce trebuie să știi despre ITP",
     descriere:
       "Valabilitate, ce se verifică, actele necesare și cum treci ITP-ul din prima. " +
@@ -96,6 +101,7 @@ export const articole: Articol[] = [
   },
   {
     slug: "aerul-conditionat-nu-mai-raceste-freon",
+    programare: { cat: "climatizare" },
     titlu: "Aerul condiționat nu mai răcește? Ce știi despre freon",
     descriere:
       "De ce scade freonul, semnele că AC-ul are o scurgere și cum eviți defectarea " +
@@ -147,6 +153,7 @@ export const articole: Articol[] = [
   },
   {
     slug: "cand-trebuie-schimbate-anvelopele",
+    programare: { cat: "service-roti" },
     titlu: "Când trebuie schimbate anvelopele?",
     descriere:
       "Adâncimea profilului, vârsta cauciucului și martorii de uzură — când și de ce " +
@@ -202,6 +209,7 @@ export const articole: Articol[] = [
   },
   {
     slug: "cat-costa-o-revizie-completa-in-2026",
+    programare: { cat: "mecanica" },
     titlu: "Cât costă o revizie completă în 2026",
     descriere:
       "Ce intră într-o revizie completă, de ce variază prețul și cum eviți costurile " +
@@ -262,6 +270,7 @@ export const articole: Articol[] = [
   },
   {
     slug: "cand-trebuie-schimbat-kitul-de-distributie",
+    programare: { cat: "mecanica" },
     titlu: "Când trebuie schimbat kitul de distribuție",
     descriere:
       "Intervalul de schimb, semnele de uzură și de ce o curea ruptă îți poate " +

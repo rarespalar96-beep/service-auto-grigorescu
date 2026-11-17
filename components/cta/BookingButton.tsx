@@ -1,6 +1,6 @@
 "use client";
 
-import { bookingUrl, externalLinkAttrs } from "@/lib/links";
+import { bookingUrl, externalLinkAttrs, type BookingTarget } from "@/lib/links";
 import { trackProgramare } from "@/lib/analytics";
 import { btn, type BtnSize, type BtnVariant } from "@/components/cta/buttonStyles";
 
@@ -16,6 +16,8 @@ const varianteDupaTon: Record<Tone, BtnVariant> = {
 interface Props {
   /** Identifică pagina-sursă pentru UTM (ex. "home", "servicii-frane"). */
   campaign: string;
+  /** Unde aterizează pe gatadedrum (secțiune + categorie); implicit pagina generală. */
+  target?: BookingTarget;
   tone?: Tone;
   size?: BtnSize;
   className?: string;
@@ -24,6 +26,7 @@ interface Props {
 
 export default function BookingButton({
   campaign,
+  target,
   tone = "dark",
   size = "md",
   className = "",
@@ -31,7 +34,7 @@ export default function BookingButton({
 }: Props) {
   return (
     <a
-      href={bookingUrl(campaign)}
+      href={bookingUrl(campaign, target)}
       {...externalLinkAttrs}
       onClick={() => trackProgramare(campaign)}
       className={btn(varianteDupaTon[tone], size, className)}

@@ -142,7 +142,7 @@ export default function ConstatareDaunePage() {
                 tot dosarul, de la constatare la reparație.
               </p>
 
-              <BookingButton campaign={campaign} tone="light" className="mt-6 w-full">
+              <BookingButton campaign={campaign} target={{ tip: "daune" }} tone="light" className="mt-6 w-full">
                 Programează constatarea
               </BookingButton>
               <CallButton sursa={campaign} tone="light" className="mt-3 w-full" />
@@ -170,6 +170,7 @@ export default function ConstatareDaunePage() {
 
       <CtaBand
         campaign={`${campaign}-jos`}
+        bookingTarget={{ tip: "daune" }}
         titlu="Ai avut un accident?"
         subtitlu="Programează constatarea online sau sună-ne — restul rezolvăm noi."
       />

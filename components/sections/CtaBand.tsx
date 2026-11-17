@@ -1,8 +1,10 @@
 import BookingButton from "@/components/cta/BookingButton";
 import CallButton from "@/components/cta/CallButton";
+import type { BookingTarget } from "@/lib/links";
 
 interface Props {
   campaign: string;
+  bookingTarget?: BookingTarget;
   titlu?: string;
   subtitlu?: string;
 }
@@ -10,6 +12,7 @@ interface Props {
 /** Bandă CTA finală — refolosită pe paginile de servicii și altele. */
 export default function CtaBand({
   campaign,
+  bookingTarget,
   titlu = "Gata să-ți programezi mașina?",
   subtitlu = "Alegi serviciul și ora online, în mai puțin de un minut.",
 }: Props) {
@@ -22,7 +25,7 @@ export default function CtaBand({
           <p className="mt-2 text-muted-invert">{subtitlu}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <BookingButton campaign={campaign}>Programează-te online</BookingButton>
+          <BookingButton campaign={campaign} target={bookingTarget}>Programează-te online</BookingButton>
           <CallButton sursa={campaign} tone="dark" />
         </div>
       </div>

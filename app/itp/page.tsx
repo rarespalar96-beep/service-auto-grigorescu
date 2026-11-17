@@ -126,7 +126,7 @@ export default function ItpPage() {
                 </div>
               </dl>
 
-              <BookingButton campaign={campaign} tone="light" className="mt-6 w-full">
+              <BookingButton campaign={campaign} target={{ tip: "itp" }} tone="light" className="mt-6 w-full">
                 Programează ITP-ul
               </BookingButton>
               <CallButton sursa={campaign} tone="light" className="mt-3 w-full" />
@@ -163,6 +163,7 @@ export default function ItpPage() {
 
       <CtaBand
         campaign={`${campaign}-jos`}
+        bookingTarget={{ tip: "itp" }}
         titlu="Îți expiră ITP-ul?"
         subtitlu="Programează inspecția online sau sună-ne — te luăm la ora stabilită."
       />
