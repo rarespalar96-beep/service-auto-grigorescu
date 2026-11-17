@@ -88,10 +88,11 @@ export const site = {
   },
 
   /**
-   * Platforma externă de programări. Rădăcina gatadedrum.com e reală; URL-ul EXACT
-   * al paginii dedicate acestui service îl furnizează proprietarul. TODO.
+   * Pagina service-ului pe platforma externă de programări (gatadedrum.com).
+   * SINGURA sursă a URL-ului de programare: fără UTM-uri aici — `bookingUrl()` din
+   * `lib/links.ts` le adaugă per buton (utm_source/utm_medium/utm_campaign).
    */
-  bookingUrl: "https://gatadedrum.com", // TODO: pagina dedicată service-ului
+  bookingUrl: "https://gatadedrum.com/servicii/bucuresti?service=40",
 
   google: {
     /**

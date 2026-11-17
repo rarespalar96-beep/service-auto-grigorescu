@@ -7,7 +7,7 @@ import { isTbd } from "@/content/_placeholder";
  */
 export function bookingUrl(campaign: string): string {
   const url = new URL(site.bookingUrl);
-  url.searchParams.set("utm_source", "site");
+  url.searchParams.set("utm_source", "servicegrigorescu.ro");
   url.searchParams.set("utm_medium", "cta");
   url.searchParams.set("utm_campaign", campaign);
   return url.toString();
