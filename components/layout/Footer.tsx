@@ -5,6 +5,7 @@ import { navPrincipal, navLegal } from "@/content/nav";
 import { directionsUrl, externalLinkAttrs } from "@/lib/links";
 import PhoneLink from "@/components/cta/PhoneLink";
 import Placeholder from "@/components/ui/Placeholder";
+import CookieSettingsLink from "@/components/legal/CookieSettingsLink";
 
 /**
  * Footer cu NAP (Name-Address-Phone) IDENTIC cu Google Business Profile —
@@ -116,12 +117,13 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {site.nume}. Toate drepturile rezervate.
           </p>
-          <nav aria-label="Legal" className="flex gap-4">
+          <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2">
             {navLegal.map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-accent">
                 {item.label}
               </Link>
             ))}
+            <CookieSettingsLink className="hover:text-accent" />
           </nav>
         </div>
       </div>

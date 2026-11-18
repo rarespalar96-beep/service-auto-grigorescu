@@ -16,5 +16,6 @@ export const navPrincipal: NavItem[] = [
 
 export const navLegal: NavItem[] = [
   { label: "Politica de confidențialitate", href: "/politica-de-confidentialitate" },
+  { label: "Politica de cookies", href: "/politica-cookies" },
   { label: "Termeni și condiții", href: "/termeni" },
 ];

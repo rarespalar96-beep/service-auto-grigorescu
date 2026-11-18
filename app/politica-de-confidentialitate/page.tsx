@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site, adresaCompleta } from "@/content/site";
 import LegalPage from "@/components/legal/LegalPage";
 
@@ -13,7 +14,7 @@ export default function PoliticaPage() {
   return (
     <LegalPage titlu="Politica de confidențialitate" actualizat="iunie 2026">
       <p>
-        Această politică explică modul în care {site.nume} („noi") prelucrează datele
+        Această politică explică modul în care {site.nume} („noi”) prelucrează datele
         cu caracter personal, în conformitate cu Regulamentul (UE) 2016/679 (GDPR).
       </p>
 
@@ -40,7 +41,7 @@ export default function PoliticaPage() {
       <h2>Programările online</h2>
       <p>
         Programările se fac pe platforma externă gatadedrum.com. Când apeși
-        „Programează-te", ești redirecționat către această platformă, care are propria
+        „Programează-te”, ești redirecționat către această platformă, care are propria
         politică de confidențialitate. Datele introduse acolo sunt prelucrate de
         operatorul platformei, nu de noi.
       </p>
@@ -48,15 +49,16 @@ export default function PoliticaPage() {
       <h2>Cookie-uri</h2>
       <p>
         Folosim cookie-uri strict necesare pentru funcționarea site-ului și, doar cu
-        acordul tău, cookie-uri de analiză (de ex. Google Analytics) pentru a înțelege
-        cum este folosit site-ul. Poți accepta sau refuza cookie-urile de analiză din
-        bannerul afișat la prima vizită. Harta Google Maps se încarcă doar după ce
-        apeși pe ea.
+        acordul tău, cookie-uri de analiză și publicitate (Google Analytics, Google
+        Ads). Poți accepta sau refuza din bannerul afișat la prima vizită și îți poți
+        schimba alegerea oricând din „Setări cookie”, în subsolul paginii. Lista
+        completă e în <Link href="/politica-cookies">politica de cookies</Link>. Harta
+        Google Maps se încarcă doar după ce apeși pe ea.
       </p>
 
       <h2>Către cine transmitem date</h2>
       <ul>
-        <li>Furnizori de analiză web (dacă ai acceptat) — ex. Google;</li>
+        <li>Google (Analytics și Ads), dacă ai acceptat cookie-urile;</li>
         <li>Google Maps, la încărcarea hărții;</li>
         <li>Platforma de programări gatadedrum.com, dacă alegi să te programezi.</li>
       </ul>
