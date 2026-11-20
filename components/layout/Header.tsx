@@ -32,7 +32,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-base font-bold text-ink-invert transition-colors hover:text-accent-light"
+              className="text-lg font-bold text-ink-invert transition-colors hover:text-accent-light"
             >
               {item.label}
             </Link>
@@ -48,9 +48,9 @@ export default function Header() {
             tone="dark"
             size="sm"
             eticheta={null}
-            className="font-extrabold! max-sm:h-10 max-sm:gap-1.5 max-sm:px-2.5 max-sm:text-[0.8125rem]"
+            className="font-extrabold! sm:text-base max-sm:h-10 max-sm:gap-1.5 max-sm:px-2.5 max-sm:text-[0.8125rem]"
           />
-          <BookingButton campaign="header" size="sm" className="font-extrabold! max-sm:hidden">
+          <BookingButton campaign="header" size="sm" className="font-extrabold! sm:text-base max-sm:hidden">
             Programează-te
           </BookingButton>
           <MobileNav />
