@@ -14,12 +14,13 @@ export const btnBase =
   "uppercase tracking-wide leading-none transition focus-visible:outline-none " +
   "active:translate-y-px";
 
-export type BtnSize = "sm" | "md" | "lg";
+export type BtnSize = "sm" | "md" | "lg" | "xl";
 
 export const btnSizes: Record<BtnSize, string> = {
   sm: "h-11 px-4 text-sm rounded-md shadow-sm",
   md: "h-12 px-5 text-base rounded-md shadow-sm",
   lg: "h-14 px-6 text-lg rounded-md shadow-sm",
+  xl: "h-16 px-8 text-xl rounded-md shadow-sm",
 };
 
 export type BtnVariant =

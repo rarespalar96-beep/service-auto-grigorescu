@@ -8,7 +8,7 @@ const pasi = [
     text:
       "Alegi serviciul și intervalul orar pe platforma noastră de programări. " +
       "Durează sub un minut și primești confirmare pe loc.",
-    nota: "Programarea se face pe platforma online — vei fi redirecționat acolo.",
+    nota: "Programarea se face pe platforma online, unde vei fi redirecționat.",
   },
   {
     nr: "02",
@@ -58,7 +58,7 @@ export default function HowItWorks() {
 
         <div className="mt-10">
           <BookingButton campaign="home-cum-functioneaza">
-            Începe — programează-te
+            Programează-te acum
           </BookingButton>
         </div>
       </div>

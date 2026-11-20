@@ -24,7 +24,7 @@ export default async function Reviews({ data }: Props) {
   return (
     <section id="recenzii" className="bg-bg">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
-        <SectionHeading eyebrow="Ce spun clienții" title="Recenzii reale, de pe Google" />
+        <SectionHeading eyebrow="Ce spun clienții" title="Recenzii" />
 
         {areAgregat ? (
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">

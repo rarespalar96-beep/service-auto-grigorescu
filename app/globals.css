@@ -33,6 +33,9 @@
      normal (#d11a2a) cade la ~3.3:1. NU se folosește ca fundal. */
   --color-accent-light: #ec4a57;
 
+  /* — Stele recenzii: galbenul Google (decorativ, nu poartă text). — */
+  --color-star: #fbbc04;
+
   /* — Fonturi (variabilele vin din next/font în layout.tsx) — */
   --font-display: var(--font-saira), "Arial Narrow", system-ui, sans-serif;
   --font-body: var(--font-barlow), system-ui, sans-serif;

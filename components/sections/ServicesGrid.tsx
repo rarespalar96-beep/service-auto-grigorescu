@@ -11,7 +11,7 @@ export default function ServicesGrid() {
         <SectionHeading
           eyebrow="Ce facem"
           title="Servicii complete pentru mașina ta"
-          subtitle="De la mecanică, tinichigerie și geometrie la climatizare, spălătorie și ITP — plus birou de piese auto, totul sub același acoperiș, cu garanție."
+          subtitle="De la mecanică, tinichigerie și geometrie la climatizare, spălătorie și ITP, plus birou de piese auto. Totul sub același acoperiș, cu garanție."
         />
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -26,7 +26,7 @@ export default function ServicesGrid() {
             <ExtraCard
               href="/itp"
               titlu="ITP"
-              sumar="Stație ITP autorizată RAR pentru autoturisme, cu verificare GPL și GNC — rapid și corect."
+              sumar="Stație ITP autorizată RAR pentru autoturisme, cu verificare GPL și GNC. Rapid și corect."
               cta="Vezi ITP"
               icon={<ItpIcon />}
             />
@@ -37,7 +37,7 @@ export default function ServicesGrid() {
             <ExtraCard
               href="/contact"
               titlu="Birou piese auto"
-              sumar="Comanzi piesele direct de la noi — nu trebuie să vii cu ele. Le găsim și le aducem pentru reparație."
+              sumar="Comanzi piesele direct de la noi, nu trebuie să vii cu ele. Le găsim și le aducem pentru reparație."
               cta="Întreabă-ne"
               icon={<PieseIcon />}
             />

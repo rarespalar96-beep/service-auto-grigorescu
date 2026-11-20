@@ -52,3 +52,6 @@ next-env.d.ts
 /.planning/
 /PLAN-site-service-auto.md
 /TODO-continut.md
+
+# capturi iteratii design (locale)
+/iteratii-design/

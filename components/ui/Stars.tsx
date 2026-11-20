@@ -1,6 +1,6 @@
 /**
  * Rând de 5 stele cu suport pentru rating fracționar (ex. 4,8) prin clip pe lățime.
- * Stelele goale sunt subtile; cele pline folosesc accentul.
+ * Stelele goale sunt subtile; cele pline sunt galbene (ca pe Google).
  */
 interface Props {
   rating: number; // 0–5
@@ -11,7 +11,9 @@ interface Props {
 }
 
 const Star = ({ size }: { size: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+  // shrink-0: în stratul plin (tăiat la `pct`%) stelele NU au voie să se strângă,
+  // altfel nu mai stau exact peste cele goale și apare o „umbră" decalată.
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden className="shrink-0">
     <path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 2.5z" />
   </svg>
 );
@@ -36,7 +38,7 @@ export default function Stars({
         ))}
       </span>
       <span
-        className="absolute inset-0 inline-flex overflow-hidden text-accent"
+        className="absolute inset-0 inline-flex overflow-hidden text-star"
         style={{ width: `${pct}%` }}
       >
         {stars.map((i) => (

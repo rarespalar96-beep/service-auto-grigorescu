@@ -25,8 +25,8 @@ export default function DauneBanner() {
 
           <p className="mt-4 max-w-xl text-lg text-muted-invert">
             Ai avut un accident? Preluăm partea complicată: deschiderea dosarului de
-            daună, constatarea cu asigurătorul și reparația prin asigurare — cu mașină
-            la schimb pe durata lucrării.
+            daună, constatarea cu asigurătorul și reparația prin asigurare. Pe durata
+            lucrării primești mașină la schimb.
           </p>
         </div>
 

@@ -19,7 +19,7 @@ export default function Header() {
             width={2538}
             height={1420}
             priority
-            className="h-14 w-auto rounded-md bg-white p-1 sm:h-20"
+            className="h-12 w-auto rounded-md bg-white p-1 sm:h-20"
           />
         </Link>
 
@@ -32,7 +32,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-base font-medium text-ink-invert/85 transition-colors hover:text-accent-light"
+              className="text-base font-bold text-ink-invert transition-colors hover:text-accent-light"
             >
               {item.label}
             </Link>
@@ -40,15 +40,18 @@ export default function Header() {
         </nav>
 
         {/* Telefon + CTA + meniu */}
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* Numărul întreg de la sm în sus; sub sm îl acoperă bara fixă de jos
-              și meniul (nu încape lângă logo + CTA + hamburger). */}
-          <span className="hidden sm:inline-flex">
-            <CallButton sursa="header" tone="dark" size="sm" eticheta={null} />
-          </span>
-          <BookingButton campaign="header" size="sm" className="max-sm:px-3">
-            <span className="sm:hidden">Programare</span>
-            <span className="hidden sm:inline">Programează-te</span>
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+          {/* Numărul e vizibil pe orice lățime (cerința proprietarului). Pe mobil
+              butonul e compact: fără etichetă, doar receptor + număr. */}
+          <CallButton
+            sursa="header"
+            tone="dark"
+            size="sm"
+            eticheta={null}
+            className="font-extrabold! max-sm:h-10 max-sm:gap-1.5 max-sm:px-2.5 max-sm:text-[0.8125rem]"
+          />
+          <BookingButton campaign="header" size="sm" className="font-extrabold! max-sm:hidden">
+            Programează-te
           </BookingButton>
           <MobileNav />
         </div>

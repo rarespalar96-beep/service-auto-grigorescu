@@ -28,7 +28,7 @@ export const faqHome: FaqItem[] = [
   {
     intrebare: "Cât durează o revizie?",
     raspuns:
-      "O revizie completă durează în general 60–90 de minute. Îți comunicăm durata " +
+      "O revizie completă durează în general între 60 și 90 de minute. Îți comunicăm durata " +
       "exactă după diagnoză, în funcție de starea mașinii.",
   },
   {

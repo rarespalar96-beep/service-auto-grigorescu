@@ -13,7 +13,7 @@ const poze = [
   },
   {
     src: "/galerie/itp-interior.jpg",
-    alt: "Stația ITP autorizată RAR și standul de geometrie 3D — mașină pe rampă în timpul verificării",
+    alt: "Stația ITP autorizată RAR și standul de geometrie 3D, cu o mașină pe rampă în timpul verificării",
   },
   {
     src: "/galerie/itp-intrare.jpg",
@@ -21,7 +21,7 @@ const poze = [
   },
   {
     src: "/galerie/panoramic.jpg",
-    alt: "Service Auto Grigorescu — vedere de ansamblu din intersecție: stația ITP, mecanică, spălătorie și service roți",
+    alt: "Service Auto Grigorescu, vedere de ansamblu din intersecție: stația ITP, mecanică, spălătorie și service roți",
     span: "md:col-span-2",
   },
   {
@@ -31,7 +31,7 @@ const poze = [
   },
   {
     src: "/galerie/vulcanizare.jpg",
-    alt: "Service roți și vulcanizare — stoc de anvelope și boxele de montaj, echilibrare și geometrie",
+    alt: "Service roți și vulcanizare: stoc de anvelope și boxele de montaj, echilibrare și geometrie",
     span: "md:col-span-2",
   },
 ];
@@ -43,7 +43,7 @@ export default function Gallery() {
         <SectionHeading
           eyebrow="Atelierul nostru"
           title="Vino la noi pe Grigorescu"
-          subtitle="Service auto complet, stație ITP autorizată RAR și spălătorie — toate la aceeași adresă, pe Bulevardul Nicolae Grigorescu 46–48."
+          subtitle="Service auto complet, stație ITP autorizată RAR și spălătorie, toate la aceeași adresă, pe Bulevardul Nicolae Grigorescu 46–48."
           tone="dark"
         />
 

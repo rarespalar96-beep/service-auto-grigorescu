@@ -81,7 +81,7 @@ export default function MobileNav() {
                         href={item.href}
                         onClick={() => setDeschis(false)}
                         aria-current={activ ? "page" : undefined}
-                        className={`flex items-center py-3.5 font-display text-lg font-semibold uppercase tracking-wide transition-colors ${
+                        className={`flex items-center py-3.5 font-display text-lg font-extrabold uppercase tracking-wide transition-colors ${
                           activ ? "text-accent-light" : "text-ink-invert hover:text-accent-light"
                         }`}
                       >

@@ -52,7 +52,7 @@ export const servicii: Serviciu[] = [
     slug: "mecanica",
     programareCat: "mecanica",
     nume: "Mecanică",
-    sumar: "Revizii, frâne, distribuție, ambreiaj, suspensie și diagnoză — toată mecanica, într-un loc.",
+    sumar: "Revizii, frâne, distribuție, ambreiaj, suspensie și diagnoză. Toată mecanica, într-un singur loc.",
     icon: "mecanica",
     intro:
       "De la revizia periodică la reparații complexe de motor, acoperim toată zona " +

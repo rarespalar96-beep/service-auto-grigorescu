@@ -15,7 +15,7 @@ import { autoRepairLd } from "@/lib/jsonld";
 const display = Saira_Condensed({
   variable: "--font-saira",
   subsets: ["latin", "latin-ext"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 

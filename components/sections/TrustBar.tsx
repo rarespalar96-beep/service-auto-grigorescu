@@ -1,13 +1,13 @@
 import { site, aniExperienta } from "@/content/site";
 import Placeholder from "@/components/ui/Placeholder";
 
-/** Bandă de încredere sub hero: 4 semnale-cheie, pe fundal deschis. */
+/** Bandă de încredere sub hero: 3 semnale-cheie, pe fundal deschis. */
 export default function TrustBar() {
   const aniExp = aniExperienta();
 
   return (
     <section aria-label="De ce să ai încredere" className="border-b border-line bg-surface">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 divide-line px-4 min-[460px]:grid-cols-2 sm:px-6 md:grid-cols-4 md:divide-x">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 divide-line px-4 sm:grid-cols-3 sm:divide-x sm:px-6">
         <Item
           titlu="Autorizat RAR"
           sub="Lucrări conforme"
@@ -19,11 +19,6 @@ export default function TrustBar() {
           }
           sub={site.anInfiintare !== null ? `Din ${site.anInfiintare}` : <Placeholder label="an" />}
           icon={<WrenchIcon />}
-        />
-        <Item
-          titlu="Recenzii reale"
-          sub="Verificate pe Google"
-          icon={<ChatIcon />}
         />
         <Item
           titlu="Garanție la lucrări"
@@ -86,10 +81,5 @@ const BadgeIcon = () => (
   <svg {...iconProps}>
     <circle cx="12" cy="9" r="6" />
     <path d="M9 14l-1 7 4-2 4 2-1-7" />
-  </svg>
-);
-const ChatIcon = () => (
-  <svg {...iconProps}>
-    <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z" />
   </svg>
 );

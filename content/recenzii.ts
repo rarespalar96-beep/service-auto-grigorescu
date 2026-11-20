@@ -29,7 +29,7 @@ export const recenzii: Recenzie[] = [
     rating: 5,
     data: "acum 10 luni",
     text:
-      "Cel mai bun service auto. Am avut cea mai bună experiență cu ei — mi-au vopsit " +
+      "Cel mai bun service auto. Am avut cea mai bună experiență cu ei. Mi-au vopsit " +
       "și reparat mașina impecabil. Niște oameni pe care te poți baza. Recomand cu încredere!",
   },
   {
@@ -44,7 +44,7 @@ export const recenzii: Recenzie[] = [
     nume: "Mihai Kosakowsky",
     rating: 5,
     data: "acum 7 luni",
-    text: "Reparație pe RCA — o surpriză foarte plăcută, rapid și bine făcut.",
+    text: "Reparație pe RCA, o surpriză foarte plăcută: rapid și bine făcut.",
   },
   {
     nume: "Jecu Răzvan",
@@ -59,7 +59,7 @@ export const recenzii: Recenzie[] = [
     rating: 5,
     data: "acum un an",
     text:
-      "Merg lunar la spălătorie și sunt mereu mulțumită — interior-exterior la preț bun " +
+      "Merg lunar la spălătorie și sunt mereu mulțumită: interior și exterior la preț bun " +
       "și gata repede. Am făcut și mașina pe asigurare la ei: prețuri corecte, oameni de " +
       "treabă. Recomand!",
   },

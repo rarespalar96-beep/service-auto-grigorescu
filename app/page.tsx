@@ -3,6 +3,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { faqLd } from "@/lib/jsonld";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
+import ReviewHighlight from "@/components/sections/ReviewHighlight";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import DauneBanner from "@/components/sections/DauneBanner";
 import HowItWorks from "@/components/sections/HowItWorks";
@@ -17,6 +18,7 @@ export default function Home() {
       <JsonLd data={faqLd(faqHome)} />
       <Hero />
       <TrustBar />
+      <ReviewHighlight />
       <ServicesGrid />
       <DauneBanner />
       <HowItWorks />
